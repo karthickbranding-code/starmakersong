@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recording Downloader for StarMaker</title>
+  <meta name="description" content="Save your own StarMaker recordings as audio or video files.">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <div class="logo" aria-hidden="true">&#9835;</div>
+      <h1>Recording Downloader</h1>
+      <p>Save <strong>your own</strong> StarMaker recordings as audio or video files.</p>
+    </header>
+
+    <form id="form" class="card" novalidate>
+      <label for="url">Recording link</label>
+      <div class="row">
+        <input id="url" type="url" inputmode="url" autocomplete="off"
+               placeholder="Paste your StarMaker share link here" required>
+        <button id="go" type="submit">Get file</button>
+      </div>
+
+      <label class="check" for="agree">
+        <input id="agree" type="checkbox">
+        <span>This is my own recording, or the singer has given me permission to save it.</span>
+      </label>
+
+      <p id="error" class="error" role="alert" hidden></p>
+    </form>
+
+    <section id="result" class="card result" hidden aria-live="polite">
+      <img id="thumb" alt="" hidden>
+      <div class="meta">
+        <h2 id="title"></h2>
+        <div id="formats" class="formats"></div>
+      </div>
+    </section>
+
+    <section class="card how">
+      <h3>How to use</h3>
+      <ol>
+        <li>Open your recording in the StarMaker app and tap <b>Share &rarr; Copy link</b>.</li>
+        <li>Paste the link above, tick the box, and press <b>Get file</b>.</li>
+        <li>Choose audio or video and the download starts.</li>
+      </ol>
+    </section>
+
+    <footer>
+      Only download recordings you own or have permission to save. Backing tracks and other
+      people's performances are protected by copyright and StarMaker's terms.
+      This tool is not affiliated with StarMaker.
+    </footer>
+  </main>
+  <script src="/static/script.js"></script>
+</body>
+</html>
